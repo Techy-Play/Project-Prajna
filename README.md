@@ -1,4 +1,3 @@
-``markdown
 # Navigation Bar with Theme Toggle
 
 This project features a responsive navigation bar with a theme toggle functionality. The navigation bar includes links to various sections, such as Research Papers, YouTube, Blogs, and more, with icons that change based on the selected theme (light or dark).
