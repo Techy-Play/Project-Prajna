@@ -1,6 +1,4 @@
-Sure! Below is a sample `README.md` file for your GitHub repository. You can customize it further based on your specific project details, features, and any additional information you want to include.
-
-```markdown
+``markdown
 # Navigation Bar with Theme Toggle
 
 This project features a responsive navigation bar with a theme toggle functionality. The navigation bar includes links to various sections, such as Research Papers, YouTube, Blogs, and more, with icons that change based on the selected theme (light or dark).
@@ -44,36 +42,25 @@ your-repo-name/
 ├── index.html
 ├── style.css
 ├── script.js
-├── light.png
-├── dark.png
-├── rch_lt.png
-├── rch_dk.png
-├── yt_light.png
-├── yt_dk.png
-├── blog_lt.png
-└── blog_dk.png
+└── icons/
+    ├── light.png
+    ├── dark.png
+    ├── rch_lt.png
+    ├── rch_dk.png
+    ├── yt_light.png
+    ├── yt_dk.png
+    ├── blog_lt.png
+    └── blog_dk.png
 ```
 
 ## Contributing
 
 Contributions are welcome! If you have suggestions for improvements or new features, please open an issue or submit a pull request.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
 - [Poppins Font](https://fonts.google.com/specimen/Poppins) for typography.
-- [Font Awesome](https://fontawesome.com/) for icons (if applicable).
 - Inspiration from various responsive design resources.
 
-```
 
-### Instructions to Customize:
-- Replace `yourusername` and `your-repo-name` with your actual GitHub username and repository name.
-- Add any additional features or technologies that you used in your project.
-- If you have a license file, make sure to include the correct license type in the License section.
-- Feel free to modify any sections to better fit your project's specifics.
-
-This README provides a clear overview of your project, making it easier for others to understand and contribute.
