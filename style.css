@@ -1,0 +1,494 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 5%; /* Changed from 1rem */
+    background: #ffffff;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    gap: 1.5rem;
+}
+
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.nav-links li {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li:not(:last-child)::after {
+    content: "|";
+    position: absolute;
+    right: -0.75rem;
+    color: #999;
+    pointer-events: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+    padding: 0.5rem 1rem;
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #3498db;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #3498db;
+    transform: translateY(-2px) scale(1.05);
+}
+
+.nav-links a:hover::before {
+    width: 100%;
+}
+
+.nav-links a:active {
+    transform: scale(0.95);
+}
+
+#theme-toggle {
+    width: clamp(28px, 3vw, 36px);
+    height: clamp(28px, 3vw, 36px);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.15) rotate(15deg);
+}
+
+#theme-toggle:active {
+    transform: scale(0.9);
+}
+
+.youtube-logo {
+    width: clamp(28px, 3vw, 36px);
+    height: clamp(28px, 3vw, 36px);
+    vertical-align: middle;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.youtube-logo:hover {
+    transform: scale(1.2);
+    opacity: 1;
+    filter: brightness(1.2);
+}
+
+.brand {
+    /* Layout */
+    position: relative;
+    display: inline-block;
+    margin-right: auto;
+    left: -2%; /* Adjust horizontal position */
+    
+    /* Typography */
+    font-family: 'Barlow Condensed', 'Noto Sans Devanagari', sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    
+    /* Color & Effects */
+    color: #2c3e50;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+    z-index: 1;
+    
+    /* Spacing */
+    padding: 0 5%;
+    min-width: 180px;
+    
+    /* Animation */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.brand:hover {
+    transform: scale(1.1) translateY(-3px) translateX(2%); /* Center alignment */
+    left: 0; /* Reset position */
+}
+
+.brand::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    width: 0;
+    height: 4px;
+    background: #e74c3c;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.brand:hover::after {
+    width: 100%; /* Full width underline */
+}
+
+
+.brand .hindi,
+.brand .english {
+    display: inline-block;
+    width: 100%;
+    padding: 0 3%; /* Inner padding */
+    box-sizing: border-box;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.brand .english {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+.brand .hindi {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.brand:hover .hindi {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+.brand:hover .english {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Animations */
+
+.click-animation {
+    animation: buttonClick 0.4s ease;
+}
+@keyframes buttonClick {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.92); }
+    100% { transform: scale(1); }
+}
+
+.youtube-logo.click-animation {
+    transform-origin: center;
+}
+
+.youtube-logo:active {
+    transform: scale(0.9);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        padding: 0.75rem 5%;
+        flex-wrap: nowrap;
+        gap: 1rem;
+    }
+    
+    .nav-links {
+        gap: 0.75rem;
+        justify-content: flex-end;
+    }
+    
+    .nav-links li:not(:last-child)::after {
+        right: -0.5rem;
+    }
+    
+    .nav-links a {
+        font-size: 0.8rem;
+        padding: 0.3rem;
+    }
+    
+    .nav-links a::before {
+        display: none;
+    }
+    .brand:hover {
+        transform: scale(1.08) translateY(-2px);
+    }
+    
+    .brand::after {
+        bottom: -4px;
+        height: 3px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 0.5rem 3%;
+        gap: 0.5rem;
+    }
+    
+    .nav-links {
+        gap: 0.5rem;
+    }
+    
+    .nav-links li:not(:last-child)::after {
+        content: none;
+    }
+    
+    
+    .youtube-logo {
+        width: 22px;
+        height: 22px;
+    }
+    
+    #theme-toggle {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+/* YouTube Link Styling */
+.youtube-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.youtube-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+}
+
+.youtube-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #3498db;
+    transition: width 0.3s ease;
+}
+
+.youtube-link:hover::before {
+    width: 100%;
+}
+
+.youtube-link:hover .youtube-text {
+    color: #3498db;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .youtube-text {
+        display: none;
+    }
+    
+    .youtube-link {
+        padding: 0.3rem 0;
+    }
+}/* Research Link Styling */
+.research-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.research-icon {
+    width: clamp(28px, 3vw, 36px);
+    height: clamp(28px, 3vw, 36px);
+    vertical-align: middle;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.research-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+    line-height: 1;
+    margin-top: 2px; /* Fine-tune alignment */
+}
+
+/* Remove position:relative and top adjustments */
+.research-icon,
+.research-text {
+    position: static;
+    top: auto;
+    transform: none;
+}
+
+.research-icon:hover {
+    transform: scale(1.15);
+    opacity: 1;
+    cursor: pointer;
+}
+
+/* Keep the rest of your CSS unchanged */
+
+.research-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #3498db;
+    transition: width 0.3s ease;
+}
+
+.research-link:hover::before {
+    width: 100%;
+}
+
+.research-link:hover .research-text {
+    color: #3498db;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .research-text {
+        display: none;
+    }
+    
+    .research-link {
+        padding: 0.3rem 0;
+    }
+}
+/* Blog Link Styling - Match existing pattern */
+.blog-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.blog-icon {
+    width: clamp(28px, 3vw, 36px);
+    height: clamp(28px, 3vw, 36px);
+    vertical-align: middle;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.blog-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+    line-height: 1;
+}
+
+.blog-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #3498db;
+    transition: width 0.3s ease;
+}
+
+.blog-link:hover::before {
+    width: 100%;
+}
+
+.blog-link:hover .blog-text {
+    color: #3498db;
+}
+
+.blog-icon:hover {
+    transform: scale(1.15);
+    opacity: 1;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .blog-text {
+        display: none;
+    }
+}
+
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.dark-mode nav {
+    background-color: #2d2d2d;
+    box-shadow: 0 2px 15px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .nav-links a,
+.dark-mode .youtube-text,
+.dark-mode .research-text,
+.dark-mode .blog-text {
+    color: #e0e0e0;
+}
+
+.dark-mode .nav-links li:not(:last-child)::after {
+    color: #666;
+}
+
+.dark-mode .brand {
+    color: #ffffff;
+}
+
+.dark-mode .nav-links a::before,
+.dark-mode .youtube-link::before,
+.dark-mode .research-link::before,
+.dark-mode .blog-link::before {
+    background: #3498db;
+}
+
+/* Dark Mode Icon Adjustments */
+.dark-mode #theme-toggle,
+.dark-mode .youtube-logo,
+.dark-mode .research-icon,
+.dark-mode .blog-icon {
+    filter: invert(1) brightness(1.2);
+}
