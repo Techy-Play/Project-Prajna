@@ -1,25 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@500&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #ffffff;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    transition: background 0.5s ease-in-out;
+
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 5%; /* Changed from 1rem */
-    background: #ffffff;
+    padding: 1%; /* Changed from 1rem */
+    background: #dbdbdb;
     box-shadow: 0 2px 15px rgba(0,0,0,0.1);
     gap: 1.5rem;
+    padding: top 1px;
 }
+
+
+.light-mode {
+    background: linear-gradient(to right, #E0F7FA, #F1F8FF, #E0F7FA);
+}
+.dark-mode {
+    background: linear-gradient(to right, #0F2027, #203A43, #2C5364);
+}
+
+/* Main Heading */
+.hero {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+/* Heading Animation (Project PRAJNA) */
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, #ff003c, #00ffea);
+    animation: rotate 20s linear infinite;
+    opacity: 0.1;
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    padding: 0 1rem;
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    animation: glitch 2s infinite;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #444444;
+}
+/* Adaptive Glow Effect */
+body.dark-mode .hero p {
+    text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8);
+    color: #00ffea; /* Dark Glow in Dark Mode */
+}
+body.dark-mode .hero h1  {
+    text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8); /* Dark Glow in Dark Mode */
+}
+
+/* Glow Effect on Hover */
+.hero h1:hover {
+    text-shadow: 0px 0px 25px rgba(255, 255, 255, 1); /* Stronger Glow */
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+
+body.dark-mode .hero h1:hover {
+    text-shadow: 0px 0px 25px rgba(0, 0, 0, 1); /* Stronger Black Glow */
+}
+
+/* Fade-in & Zoom effect */
+@keyframes fadeInZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Paragraph Styling */
+.hero p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    opacity: 0;
+    animation: fadeInText 1.5s ease-out forwards 0.5s;
+}
+
+/* Paragraph Fade-in Effect */
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Light Glow Effect */
+.light-glow {
+    text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8),
+                 0px 0px 30px rgba(255, 255, 255, 0.6);
+}
+
+/* Dark Mode Glow */
+.dark-mode .hero h1 {
+    text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8),
+                 0px 0px 30px rgba(0, 0, 0, 0.6);
+}
+
+
+/* Smooth Glow Animation */
+@keyframes glow-pulse {
+    from {
+        text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5),
+                     0px 0px 30px rgba(255, 255, 255, 0.4);
+    }
+    to {
+        text-shadow: 0px 0px 25px rgba(255, 255, 255, 0.9),
+                     0px 0px 50px rgba(255, 255, 255, 0.8);
+    }
+}
+
+
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes glitch {
+    0% { text-shadow: 2px 2px #ff003c, -2px -2px #00ffea; }
+    50% { text-shadow: -3px 3px #ff003c, 3px -3px #00ffea; }
+    100% { text-shadow: 2px 2px #ff003c, -2px -2px #00ffea; }
+}
+
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.parallax {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.3;
+    font-size: 2rem;
+}
+
 
 
 .nav-links {
@@ -30,7 +202,7 @@ nav {
     margin: 0;
     padding: 0;
     flex-grow: 1;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .nav-links li {
@@ -43,7 +215,7 @@ nav {
     content: "|";
     position: absolute;
     right: -0.75rem;
-    color: #999;
+    color: #aaaaaa;
     pointer-events: none;
 }
 
@@ -86,7 +258,7 @@ nav {
     width: clamp(28px, 3vw, 36px);
     height: clamp(28px, 3vw, 36px);
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: transform 0.1s ease;
 }
 
 #theme-toggle:hover {
@@ -116,7 +288,7 @@ nav {
     position: relative;
     display: inline-block;
     margin-right: auto;
-    left: -2%; /* Adjust horizontal position */
+    left: -5%; /* Adjust horizontal position */
     
     /* Typography */
     font-family: 'Barlow Condensed', 'Noto Sans Devanagari', sans-serif;
@@ -152,7 +324,7 @@ nav {
     width: 0;
     height: 4px;
     background: #e74c3c;
-    transform: translateX(-50%);
+    transform: translateX(-80%);
     transition: width 0.3s ease;
 }
 
@@ -214,13 +386,13 @@ nav {
 /* Responsive Design */
 @media (max-width: 768px) {
     nav {
-        padding: 0.75rem 5%;
+        padding: 1%;
         flex-wrap: nowrap;
         gap: 1rem;
     }
     
     .nav-links {
-        gap: 0.75rem;
+        gap: 1.75rem;
         justify-content: flex-end;
     }
     
@@ -310,7 +482,7 @@ nav {
     color: #3498db;
 }
 
-/* Mobile Responsiveness */
+/* Mobile Responsiveness for youtube  */
 @media (max-width: 768px) {
     .youtube-text {
         display: none;
@@ -467,7 +639,7 @@ body.dark-mode {
 .dark-mode .youtube-text,
 .dark-mode .research-text,
 .dark-mode .blog-text {
-    color: #e0e0e0;
+    color: #ffffff;
 }
 
 .dark-mode .nav-links li:not(:last-child)::after {
@@ -492,3 +664,200 @@ body.dark-mode {
 .dark-mode .blog-icon {
     filter: invert(1) brightness(1.2);
 }
+/* Push footer to the bottom */
+
+.content {
+    flex: 1;
+}
+
+
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 10px 15px; /* Reduced padding */
+    font-size: 0.9rem; /* Smaller text */
+    margin-top: auto; /* Pushes footer to bottom */
+}
+
+footer a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+
+/* Styling for the search container */
+.search-container {
+    position: relative;
+    width: 400px;
+    margin: 40px auto;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50px;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid transparent;
+    border-color: #b2b0b0;
+}
+
+/* Search box input */
+.search-container input {
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    color: #333;
+    background: transparent;
+    font-weight: 500;
+}
+
+/* Placeholder styling */
+.search-container .placeholder {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #888;
+    pointer-events: none;
+    transition: 0.3s ease-in-out;
+}
+
+/* Move placeholder when input is active */
+.search-container input:focus ~ .placeholder,
+.search-container input:not(:placeholder-shown) ~ .placeholder {
+    top: 5px;
+    left: 20px;
+    font-size: 12px;
+    color: #555;
+}
+
+/* Send icon */
+.search-container .icon {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Send button hover effect */
+.search-container .icon:hover {
+    transform: scale(1.1);
+}
+
+/* Light mode border effect */
+.search-container:hover {
+    border-color: #333;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark mode styling */
+body.dark-mode .search-container {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+body.dark-mode .search-container input {
+    color: #fff;
+}
+
+body.dark-mode .search-container .placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+body.dark-mode .search-container:hover {
+    border-color: #fff;
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    background-color: #d0d0d0;
+    color: #333;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode footer {
+    background-color: #000000;
+    color: #c0baba;
+}
+
+footer a {
+    color: #ff1616;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #005bb5;
+}
+
+/* Search Box Hover Effects */
+body:not(.dark-mode) .search-container:hover {
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #ffffff, #e8e8e8);
+}
+
+body.dark-mode .search-container:hover {
+    box-shadow: 2px 2px 20px rgba(255, 255, 255, 0.15);
+    background: rgba(20, 20, 20, 0.9);
+}
+
+/* Send Icon Hover */
+#send-icon:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+/* 📌 Responsive Design Tweaks */
+
+@media screen and (max-width: 768px) {
+    /* 🔹 Navigation Bar */
+    
+
+    /* 🔹 Brand Name Centering */
+    .brand {
+        text-align: center;
+        width: 100%;
+    }
+
+   
+    /* 🔹 AI Search Box - Responsive */
+    .search-container {
+        width: 90%; /* Adjust width for mobile screens */
+        height: 50px;
+    }
+
+    /* 🔹 Content Centering */
+    .content {
+        text-align: center;
+        padding: 10px;
+    }
+
+    /* 🔹 Footer */
+    footer {
+        text-align: center;
+        padding: 10px;
+    }
+}
+
+/* 🔹 Tablet View (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+    .nav-links {
+        justify-content: center;
+    }
+
+    .search-container {
+        width: 80%;
+    }
+}
+
+
+

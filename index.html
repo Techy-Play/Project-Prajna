@@ -7,35 +7,68 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@900&family=Noto+Sans+Devanagari:wght@900&display=swap" rel="stylesheet">        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@900&family=Noto+Sans+Devanagari:wght@900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+        
+
     </head>
 <body>
-    <nav>
-        <a href="/" class="brand">
-            <span class="hindi">प्रजना</span>
-            <span class="english">Prajna</span>
-        </a>
-        <ul class="nav-links">
-            <li>
-                <a href="https://ijsret.com/wp-content/uploads/2023/11/IJSRET_V9_issue6_387.pdf" target="_blank" class="research-link">
-                    <img src="icon/rch_lt.png" alt="Research Papers" id="research-icon" class="research-icon">
-                    <span class="research-text">Research Paper</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://medium.com/i-am-prajna" target="_blank" class="blog-link">
-                    <img src="icon/blog_lt.png" alt="Blogs" id="blog-icon" class="blog-icon">
-                    <span class="blog-text">Blogs</span>
-                </a>
-            </li>            <li>
-                <a href="https://www.youtube.com/@Prajna-A-Conversational-AI" target="_blank" class="youtube-link">
-                    <img src="icon/yt_lt.png" alt="YouTube" id="youtube-icon" class="youtube-logo">
-                    <span class="youtube-text">YouTube Page</span>
-                </a>
-            </li>
-        </ul>
-        <img src="icon/light.png" alt="Theme Toggle" id="theme-toggle">
-    </nav>
+    <div>
+        <nav>
+            <a href="index.html" class="brand">
+                <span class="hindi">प्रजना</span>
+                <span class="english">Prajna</span>
+            </a>
+            <ul class="nav-links">
+                <li>
+                    <a href="https://ijsret.com/wp-content/uploads/2023/11/IJSRET_V9_issue6_387.pdf" target="_blank" class="research-link">
+                        <img src="icon/rch_lt.png" alt="Research Papers" id="research-icon" class="research-icon">
+                        <span class="research-text">Research Paper</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://medium.com/i-am-prajna" target="_blank" class="blog-link">
+                        <img src="icon/blog_lt.png" alt="Blogs" id="blog-icon" class="blog-icon">
+                        <span class="blog-text">Blogs</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/@Prajna-A-Conversational-AI" target="_blank" class="youtube-link">
+                        <img src="icon/yt_lt.png" alt="YouTube" id="youtube-icon" class="youtube-logo">
+                        <span class="youtube-text">YouTube Page</span>
+                    </a>
+                </li>
+            </ul>
+            <img src="icon/light.png" alt="Theme Toggle" id="theme-toggle">
+        </nav>
+    </div>  
+
+   
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Project <span class="floating">Prajna</span></h1>
+            <p>Prajna: A Conversational AI</p>
+        </div>
+    </section>
+<div class="tech-card">
+    <!-- Search Form -->
+    <form action="chat.html" method="GET" class="search-container">
+        <input type="text" name="query" id="search" placeholder=" " required>
+        <span class="placeholder">Ask Prajna</span>
+        <img src="icon/send_lt.png" class="icon" alt="Send" id="send-icon">
+    </form>
+</div>      
+    
+
+    <footer>
+        <p>You can get a flavor of the conversational AI through a quick game. Rest of the features can be availed through a subscription.</p>
+        <p>Have a query or use case? Reach out at 
+            <a href="mailto:shivamdutt606@gmail.com">shivamdutt606@gmail.com</a>
+        </p>
+        <p>Cheers! 🚀</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>

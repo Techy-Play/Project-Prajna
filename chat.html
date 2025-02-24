@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prajna AI Chat</title>
+    <link rel="stylesheet" href="chat-style.css">
+</head>
+<body>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>Prajna AI Chat</h2>
+        </div>
+        <div class="chat-body">
+            <div id="chat-messages">
+                <!-- Messages will be dynamically added here -->
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chat-entry" placeholder="Ask something...">
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const query = urlParams.get("query");
+
+            if (query) {
+                document.getElementById("chat-entry").value = query; // Auto-fill search text
+            }
+        });
+    </script>
+
+</body>
+</html>
